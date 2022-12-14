@@ -1,6 +1,0 @@
-query GetPlayLists($offset: Int) @rest(path: "playlists") {
-  Playlist(limit: 10, offset: $offset) {
-    PlaylistId
-    Name
-  }
-}
