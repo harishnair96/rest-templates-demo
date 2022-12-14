@@ -39,6 +39,10 @@ jobs:
           npm install
           cd ..
           node rest-template-script/index.js --template_dir=./rest-templates --metadata_dir=./hasura/metadata
+          git add hasura
+          git commit -m "Auto commit with generated metadata"
+          git remote set-url --push origin https://harishnair96:${{secrets.MY_PAT}}@github.com/harishnair96/rest-templates-demo.git
+          git push origin main
           cd hasura
           curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh|INSTALL_PATH=. bash
           ./hasura deploy --admin-secret ${{secrets.HASURA_ADMIN}} --endpoint ${{SECRETS.HASURA_ENDPOINT}}
