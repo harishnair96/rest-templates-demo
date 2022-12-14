@@ -35,6 +35,9 @@ jobs:
           node-version: 14.19.3
       - name: Run a multi-line script
         run: |
+          cd rest-template-script
+          npm install
+          cd ..
           node rest-template-script/index.js --template_dir=./rest-templates --metadata_dir=./hasura/metadata
           cd hasura
           curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh|INSTALL_PATH=. bash
