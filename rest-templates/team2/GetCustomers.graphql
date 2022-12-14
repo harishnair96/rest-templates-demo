@@ -3,5 +3,6 @@ query GetCustomers($offset: Int = 0) @rest(path: "customers") {
     CustomerId
     FirstName
     LastName
+    Email
   }
 }
