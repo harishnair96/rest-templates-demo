@@ -7,8 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,12 +29,14 @@ jobs:
           repository: harishnair96/rest-template-script
           path: rest-template-script
           token: ${{secrets.MY_PAT}}
-
-      # Runs a set of commands using the runners shell
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.19.3
       - name: Run a multi-line script
         run: |
-          ls
-          cd rest-template-script
-          ls
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          node rest-template-script/index.js --template_dir=./rest-templates --metadata_dir=./hasura/metadata
+          cd hasura
+          curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh|INSTALL_PATH=. bash
+          ./hasura deploy --admin-secret ${{secrets.HASURA_ADMIN}} --endpoint ${{SECRETS.HASURA_ENDPOINT}}
+          echo Done
