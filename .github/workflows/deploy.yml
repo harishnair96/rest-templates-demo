@@ -47,6 +47,6 @@ jobs:
           git pull origin main
           git push origin main
           cd hasura
-          curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh|INSTALL_PATH=. bash
+          curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh|INSTALL_PATH=. bash || echo
           ./hasura deploy --admin-secret ${{secrets.HASURA_ADMIN}} --endpoint ${{SECRETS.HASURA_ENDPOINT}}
           echo Done
