@@ -1,0 +1,6 @@
+query GetAlbums($offset: Int = 0) @rest(path: "albums") {
+  Album(limit: 10, offset: $offset) {
+    AlbumId
+    Title
+  }
+}
