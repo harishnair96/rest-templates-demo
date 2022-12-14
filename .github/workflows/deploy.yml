@@ -42,7 +42,7 @@ jobs:
           git config --global user.email "harishnair@hasura.io"
           git config --global user.name "Harish Nair"
           git add hasura
-          git commit -m "Auto commit with generated metadata"
+          git commit -m "Auto commit with generated metadata" || echo "No changes to commit"
           git remote set-url --push origin https://harishnair96:${{secrets.MY_PAT}}@github.com/harishnair96/rest-templates-demo.git
           git pull origin main
           git push origin main
