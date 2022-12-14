@@ -1,1 +1,28 @@
-[]
+- name: allowed-queries
+  definition:
+    queries:
+      - name: GetAlbums
+        query: |-
+          query GetAlbums($offset: Int = 0) {
+            Album(limit: 10, offset: $offset) {
+              AlbumId
+              Title
+            }
+          }
+      - name: GetCustomers
+        query: |-
+          query GetCustomers($offset: Int = 0) {
+            Customer(limit: 10, offset: $offset) {
+              CustomerId
+              FirstName
+              LastName
+            }
+          }
+      - name: GetPlayLists
+        query: |-
+          query GetPlayLists($offset: Int) {
+            Playlist(limit: 10, offset: $offset) {
+              PlaylistId
+              Name
+            }
+          }

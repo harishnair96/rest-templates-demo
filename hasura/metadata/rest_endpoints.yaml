@@ -1,1 +1,27 @@
-[]
+- comment: ""
+  methods:
+    - GET
+  name: GetAlbums
+  url: albums
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: GetAlbums
+- comment: ""
+  methods:
+    - GET
+  name: GetCustomers
+  url: customers
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: GetCustomers
+- comment: ""
+  methods:
+    - GET
+  name: GetPlayLists
+  url: playlists
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: GetPlayLists
