@@ -1,6 +1,15 @@
 - comment: ""
   methods:
     - GET
+  name: GetAlbumById
+  url: albums/:AlbumId
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: GetAlbumById
+- comment: ""
+  methods:
+    - GET
   name: GetAlbums
   url: albums
   definition:
