@@ -1,0 +1,6 @@
+query GetAlbumById($AlbumId: Int!) @rest(path: "albums/:AlbumId") {
+  Album_by_pk(AlbumId: $AlbumId) {
+    AlbumId
+    Title
+  }
+}
