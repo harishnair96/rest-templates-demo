@@ -1,0 +1,17 @@
+# the vscode graphql extension will provide intellisense when writing graphql files if it can find this file
+# however it only looks in project root by default. You can set the following settings to point it to this file
+# "graphql-config.load.rootDir": "frontend-application",
+# "graphql-config.dotEnvPath": "frontend-application/.env",
+# the extension does not refresh the schema automatically. you must explicitly tell it to restart from the command pallete
+schema:
+  - ${HASURA_GRAPHQL_ENDPOINT:"https://rest-templates-demo.hasura.app/v1/graphql"}:
+      headers:
+        x-hasura-admin-secret: ${HASURA_GRAPHQL_ADMIN_SECRET:"khRYD7eUMCOavUeTzD5hFJ47CmUcAsvVTzusIzPYTfHAhbiXg5gSip5KXLpr8Ayx"}
+        # admin role exposes entire schema. change role here and restart extension to see role specific schema
+        # x-hasura-role: admin
+documents:
+  - ./**/*.{gql,graphql,js}
+
+extensions:
+  customDirectives:
+    - directive @rest(path:String, methods:[String!]) on QUERY | MUTATION
