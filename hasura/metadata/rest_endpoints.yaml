@@ -19,6 +19,15 @@
 - comment: ""
   methods:
     - GET
+  name: AlbumForArtist
+  url: artist/:ArtistId/albums
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: AlbumForArtist
+- comment: ""
+  methods:
+    - GET
   name: GetCustomers
   url: customers
   definition:

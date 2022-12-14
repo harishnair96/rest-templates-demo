@@ -1,10 +1,26 @@
 - name: allowed-queries
   definition:
     queries:
+      - name: GetAlbumById
+        query: |-
+          query GetAlbumById($AlbumId: Int!) {
+            Album_by_pk(AlbumId: $AlbumId) {
+              AlbumId
+              Title
+            }
+          }
       - name: GetAlbums
         query: |-
           query GetAlbums($offset: Int = 0) {
             Album(limit: 10, offset: $offset) {
+              AlbumId
+              Title
+            }
+          }
+      - name: AlbumForArtist
+        query: |-
+          query AlbumForArtist($_eq: Int!, $offset: Int = 0) {
+            Album(where: {ArtistId: {_eq: $_eq}}, limit: 10, offset: $offset) {
               AlbumId
               Title
             }
@@ -24,13 +40,5 @@
             Playlist(limit: 10, offset: $offset) {
               PlaylistId
               Name
-            }
-          }
-      - name: GetAlbumById
-        query: |-
-          query GetAlbumById($AlbumId: Int!) {
-            Album_by_pk(AlbumId: $AlbumId) {
-              AlbumId
-              Title
             }
           }
