@@ -34,11 +34,3 @@
               LastName
             }
           }
-      - name: GetPlayLists
-        query: |-
-          query GetPlayLists($offset: Int) {
-            Playlist(limit: 10, offset: $offset) {
-              PlaylistId
-              Name
-            }
-          }
