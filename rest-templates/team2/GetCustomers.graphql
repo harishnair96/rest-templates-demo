@@ -1,0 +1,7 @@
+query GetCustomers($offset: Int = 0) @rest(path: "customers") {
+  Customer(limit: 10, offset: $offset) {
+    CustomerId
+    FirstName
+    LastName
+  }
+}
