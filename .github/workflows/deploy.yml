@@ -44,6 +44,7 @@ jobs:
           git add hasura
           git commit -m "Auto commit with generated metadata"
           git remote set-url --push origin https://harishnair96:${{secrets.MY_PAT}}@github.com/harishnair96/rest-templates-demo.git
+          git pull origin main
           git push origin main
           cd hasura
           curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh|INSTALL_PATH=. bash
