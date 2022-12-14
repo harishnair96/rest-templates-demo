@@ -26,3 +26,11 @@
               Name
             }
           }
+      - name: GetAlbumById
+        query: |-
+          query GetAlbumById($AlbumId: Int!) {
+            Album_by_pk(AlbumId: $AlbumId) {
+              AlbumId
+              Title
+            }
+          }
