@@ -25,6 +25,14 @@
               Title
             }
           }
+      - name: UpdateArtist
+        query: >-
+          mutation UpdateArtist($ArtistId: Int!, $Name: String!) {
+            update_Artist_by_pk(pk_columns: {ArtistId: $ArtistId}, _set: {Name: $Name}) {
+              ArtistId
+              Name
+            }
+          }
       - name: GetCustomers
         query: |-
           query GetCustomers($offset: Int = 0) {

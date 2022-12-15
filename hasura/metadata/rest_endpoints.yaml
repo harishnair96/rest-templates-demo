@@ -27,6 +27,15 @@
       query_name: AlbumForArtist
 - comment: ""
   methods:
+    - PUT
+  name: UpdateArtist
+  url: artists/:ArtistId
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: UpdateArtist
+- comment: ""
+  methods:
     - GET
   name: GetCustomers
   url: customers
