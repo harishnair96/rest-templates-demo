@@ -1,0 +1,14 @@
+query TracksByGenre($offset: Int = 0, $genre: String!) @rest(path: ":genre/tracks") {
+  Genre(where: {Name: {_eq: $genre}}) {
+    Tracks(limit: 10, offset: $offset) {
+      AlbumId
+      Genre {
+        GenreId
+        Name
+      }
+      Composer
+      TrackId
+      Name
+    }
+  }
+}
