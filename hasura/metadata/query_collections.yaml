@@ -43,3 +43,19 @@
               Email
             }
           }
+      - name: TracksByGenre
+        query: |-
+          query TracksByGenre($offset: Int = 0, $genre: String!) {
+            Genre(where: {Name: {_eq: $genre}}) {
+              Tracks(limit: 10, offset: $offset) {
+                AlbumId
+                Genre {
+                  GenreId
+                  Name
+                }
+                Composer
+                TrackId
+                Name
+              }
+            }
+          }
