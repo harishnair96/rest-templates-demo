@@ -1,0 +1,10 @@
+mutation UpdateArtist($ArtistId: Int!, $Name: String!)
+@rest(path: "artists/:ArtistId", methods: ["PUT"]) {
+  update_Artist_by_pk(
+    pk_columns: { ArtistId: $ArtistId }
+    _set: { Name: $Name }
+  ) {
+    ArtistId
+    Name
+  }
+}
