@@ -1,0 +1,5 @@
+query Employees @rest(path: "employees"){
+  Employee {
+    Address
+  }
+}
