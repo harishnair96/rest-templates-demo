@@ -1,6 +1,15 @@
 - comment: ""
   methods:
     - GET
+  name: Employees
+  url: employees
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: Employees
+- comment: ""
+  methods:
+    - GET
   name: GetAlbumById
   url: albums/:AlbumId
   definition:

@@ -1,6 +1,13 @@
 - name: allowed-queries
   definition:
     queries:
+      - name: Employees
+        query: |-
+          query Employees {
+            Employee {
+              Address
+            }
+          }
       - name: GetAlbumById
         query: |-
           query GetAlbumById($AlbumId: Int!) {
