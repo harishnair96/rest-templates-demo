@@ -55,6 +55,15 @@
 - comment: ""
   methods:
     - GET
+  name: Invoices
+  url: invoices
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: Invoices
+- comment: ""
+  methods:
+    - GET
   name: TracksByGenre
   url: :genre/tracks
   definition:
