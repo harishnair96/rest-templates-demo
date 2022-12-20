@@ -1,0 +1,7 @@
+query Invoices @rest(path: "/invoices") {
+  Invoice {
+    BillingAddress
+    BillingCity
+    BillingCountry
+  }
+}
