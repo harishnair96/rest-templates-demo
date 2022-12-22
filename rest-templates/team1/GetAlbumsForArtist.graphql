@@ -1,6 +1,0 @@
-query AlbumForArtist($_eq: Int!, $offset: Int = 0) @rest(path: "artist/:ArtistId/albums") {
-  Album(where: {ArtistId: {_eq: $_eq}}, limit: 10, offset: $offset) {
-    AlbumId
-    Title
-  }
-}
