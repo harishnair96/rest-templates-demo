@@ -8,38 +8,6 @@
               Address
             }
           }
-      - name: GetAlbumById
-        query: |-
-          query GetAlbumById($AlbumId: Int!) {
-            Album_by_pk(AlbumId: $AlbumId) {
-              AlbumId
-              Title
-            }
-          }
-      - name: GetAlbums
-        query: |-
-          query GetAlbums($offset: Int = 0) {
-            Album(limit: 10, offset: $offset) {
-              AlbumId
-              Title
-            }
-          }
-      - name: AlbumForArtist
-        query: |-
-          query AlbumForArtist($_eq: Int!, $offset: Int = 0) {
-            Album(where: {ArtistId: {_eq: $_eq}}, limit: 10, offset: $offset) {
-              AlbumId
-              Title
-            }
-          }
-      - name: UpdateArtist
-        query: >-
-          mutation UpdateArtist($ArtistId: Int!, $Name: String!) {
-            update_Artist_by_pk(pk_columns: {ArtistId: $ArtistId}, _set: {Name: $Name}) {
-              ArtistId
-              Name
-            }
-          }
       - name: GetCustomers
         query: |-
           query GetCustomers($offset: Int = 0) {
@@ -48,30 +16,5 @@
               FirstName
               LastName
               Email
-            }
-          }
-      - name: Invoices
-        query: |-
-          query Invoices {
-            Invoice {
-              BillingAddress
-              BillingCity
-              BillingCountry
-            }
-          }
-      - name: TracksByGenre
-        query: |-
-          query TracksByGenre($offset: Int = 0, $genre: String!) {
-            Genre(where: {Name: {_eq: $genre}}) {
-              Tracks(limit: 10, offset: $offset) {
-                AlbumId
-                Genre {
-                  GenreId
-                  Name
-                }
-                Composer
-                TrackId
-                Name
-              }
             }
           }

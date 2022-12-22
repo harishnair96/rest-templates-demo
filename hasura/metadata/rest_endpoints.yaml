@@ -10,63 +10,9 @@
 - comment: ""
   methods:
     - GET
-  name: GetAlbumById
-  url: albums/:AlbumId
-  definition:
-    query:
-      collection_name: allowed-queries
-      query_name: GetAlbumById
-- comment: ""
-  methods:
-    - GET
-  name: GetAlbums
-  url: albums
-  definition:
-    query:
-      collection_name: allowed-queries
-      query_name: GetAlbums
-- comment: ""
-  methods:
-    - GET
-  name: AlbumForArtist
-  url: artist/:ArtistId/albums
-  definition:
-    query:
-      collection_name: allowed-queries
-      query_name: AlbumForArtist
-- comment: ""
-  methods:
-    - PUT
-  name: UpdateArtist
-  url: artists/:ArtistId
-  definition:
-    query:
-      collection_name: allowed-queries
-      query_name: UpdateArtist
-- comment: ""
-  methods:
-    - GET
   name: GetCustomers
   url: customers
   definition:
     query:
       collection_name: allowed-queries
       query_name: GetCustomers
-- comment: ""
-  methods:
-    - GET
-  name: Invoices
-  url: invoices
-  definition:
-    query:
-      collection_name: allowed-queries
-      query_name: Invoices
-- comment: ""
-  methods:
-    - GET
-  name: TracksByGenre
-  url: :genre/tracks
-  definition:
-    query:
-      collection_name: allowed-queries
-      query_name: TracksByGenre
