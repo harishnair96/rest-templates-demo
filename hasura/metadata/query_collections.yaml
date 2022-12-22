@@ -8,6 +8,14 @@
               Address
             }
           }
+      - name: GetGenre
+        query: |-
+          query GetGenre($offset: Int = 0) {
+            Genre(limit: 10, offset: $offset) {
+              GenreId
+              Name
+            }
+          }
       - name: GetCustomers
         query: |-
           query GetCustomers($offset: Int = 0) {

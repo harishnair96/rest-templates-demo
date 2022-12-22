@@ -10,6 +10,15 @@
 - comment: ""
   methods:
     - GET
+  name: GetGenre
+  url: genres
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: GetGenre
+- comment: ""
+  methods:
+    - GET
   name: GetCustomers
   url: customers
   definition:
