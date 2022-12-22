@@ -1,0 +1,6 @@
+query GetGenreById($GenreId: Int!) @rest(path: "genres/:GenreId"){
+  Genre_by_pk(GenreId: $GenreId) {
+    GenreId
+    Name
+  }
+}
