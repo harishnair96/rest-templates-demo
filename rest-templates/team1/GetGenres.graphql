@@ -1,0 +1,6 @@
+query GetGenre($offset: Int = 0) @rest(path: "genres", methods: ["GET"]) {
+  Genre(limit: 10, offset: $offset) {
+    GenreId
+    Name
+  }
+}
