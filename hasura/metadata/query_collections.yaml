@@ -50,6 +50,15 @@
               Email
             }
           }
+      - name: Invoices
+        query: |-
+          query Invoices {
+            Invoice {
+              BillingAddress
+              BillingCity
+              BillingCountry
+            }
+          }
       - name: TracksByGenre
         query: |-
           query TracksByGenre($offset: Int = 0, $genre: String!) {
