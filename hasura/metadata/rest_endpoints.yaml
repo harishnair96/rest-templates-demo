@@ -25,3 +25,12 @@
     query:
       collection_name: allowed-queries
       query_name: GetCustomers
+- comment: ""
+  methods:
+    - GET
+  name: GetGenreById
+  url: genres/:GenreId
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: GetGenreById

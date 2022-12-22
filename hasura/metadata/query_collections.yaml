@@ -26,3 +26,11 @@
               Email
             }
           }
+      - name: GetGenreById
+        query: |-
+          query GetGenreById($GenreId: Int!) {
+            Genre_by_pk(GenreId: $GenreId) {
+              GenreId
+              Name
+            }
+          }
